@@ -12,6 +12,7 @@
 		CF7ED5C01E92C3A900E609A0 /* RecordSoundsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7ED5BF1E92C3A900E609A0 /* RecordSoundsVC.swift */; };
 		CF7ED5C31E92C3A900E609A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF7ED5C11E92C3A900E609A0 /* Main.storyboard */; };
 		CF7ED5C81E92C3A900E609A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF7ED5C61E92C3A900E609A0 /* LaunchScreen.storyboard */; };
+		CFE04B8820205F9700721FB4 /* TranscribeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE04B8720205F9700721FB4 /* TranscribeVC.swift */; };
 		CFF1FBCB1E95866500005B19 /* PlaySoundsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF1FBCA1E95866500005B19 /* PlaySoundsVC.swift */; };
 		CFF1FBCD1E959ED500005B19 /* playsoundsviewcontroller-audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF1FBCC1E959ED500005B19 /* playsoundsviewcontroller-audio.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,7 @@
 		CF7ED5C21E92C3A900E609A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF7ED5C71E92C3A900E609A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF7ED5C91E92C3A900E609A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFE04B8720205F9700721FB4 /* TranscribeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranscribeVC.swift; sourceTree = "<group>"; };
 		CFF1FBCA1E95866500005B19 /* PlaySoundsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsVC.swift; sourceTree = "<group>"; };
 		CFF1FBCC1E959ED500005B19 /* playsoundsviewcontroller-audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "playsoundsviewcontroller-audio.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,6 +62,7 @@
 			children = (
 				CF7ED5BD1E92C3A900E609A0 /* AppDelegate.swift */,
 				CF7ED5BF1E92C3A900E609A0 /* RecordSoundsVC.swift */,
+				CFE04B8720205F9700721FB4 /* TranscribeVC.swift */,
 				CFF1FBCA1E95866500005B19 /* PlaySoundsVC.swift */,
 				CFF1FBCC1E959ED500005B19 /* playsoundsviewcontroller-audio.swift */,
 				CF7ED5C11E92C3A900E609A0 /* Main.storyboard */,
@@ -145,6 +148,7 @@
 			files = (
 				CF7ED5C01E92C3A900E609A0 /* RecordSoundsVC.swift in Sources */,
 				CFF1FBCB1E95866500005B19 /* PlaySoundsVC.swift in Sources */,
+				CFE04B8820205F9700721FB4 /* TranscribeVC.swift in Sources */,
 				CF7ED5BE1E92C3A900E609A0 /* AppDelegate.swift in Sources */,
 				CFF1FBCD1E959ED500005B19 /* playsoundsviewcontroller-audio.swift in Sources */,
 			);
