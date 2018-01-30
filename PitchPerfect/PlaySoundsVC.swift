@@ -27,6 +27,21 @@ class PlaySoundsVC: UIViewController {
     
     enum ButtonType: Int { case slow = 0, fast, chipmunk, vader, echo, reverb }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        [snailButton, chipmunkButton, rabbitButton, vaderButton, echoButton, reverbButton].forEach {
+            $0?.contentMode = .center
+            $0?.imageView?.contentMode = .scaleAspectFit
+        }
+        
+        setupAudio()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureUI(.notPlaying)
+    }
     
     @IBAction func playSoundForButton(sender: UIButton) {
         
@@ -51,17 +66,6 @@ class PlaySoundsVC: UIViewController {
     
     @IBAction func stopButtonPressed(sender: AnyObject) {
         stopAudio()
-    }
-        
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupAudio()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        configureUI(.notPlaying)
     }
 
 }
