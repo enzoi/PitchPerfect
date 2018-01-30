@@ -10,6 +10,8 @@ import UIKit
 
 class TranscribeVC: UIViewController {
 
+    var recordedAudioURL: URL!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
