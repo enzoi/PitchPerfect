@@ -78,7 +78,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="e7s-8v-K1M" kind="show" id="y83-p8-wWO"/>
+                                    <segue destination="e7s-8v-K1M" kind="show" identifier="transcribing" id="y83-p8-wWO"/>
                                 </connections>
                             </button>
                         </subviews>

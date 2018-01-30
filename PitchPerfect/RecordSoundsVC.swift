@@ -21,14 +21,14 @@ class RecordSoundsVC: UIViewController, AVAudioRecorderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pauseRecordingButton.isEnabled = false
-        stopRecordingButton.isEnabled = false
+
+        configureRecordingButton(isRecording: false, isPaused: false, message: "Tap to Record")
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        pauseRecordingButton.isEnabled = false
-        stopRecordingButton.isEnabled = false
+        
+        configureRecordingButton(isRecording: false, isPaused: false, message: "Tap to Record")
     }
     
     var audioRecorder: AVAudioRecorder!
@@ -49,16 +49,23 @@ class RecordSoundsVC: UIViewController, AVAudioRecorderDelegate {
         return audioRecorder
     }
     
-    func configureRecordingButton(isRecording: Bool, isPausing: Bool, message: String) {
+    func configureRecordingButton(isRecording: Bool, isPaused: Bool, message: String) {
         recordButton.isEnabled = !isRecording
         recordingLabel.text = message
-        pauseRecordingButton.isEnabled = !isPausing
+        pauseRecordingButton.isEnabled = isRecording && !isPaused
         stopRecordingButton.isEnabled = isRecording
+        transcribeButton.isEnabled = isRecording
+        
+        if isRecording {
+            transcribeButton.alpha = 1.0
+        } else {
+            transcribeButton.alpha = 0.5
+        }
     }
     
     @IBAction func recordAudio(_ sender: Any) {
         
-        configureRecordingButton(isRecording: true, isPausing: false, message: "Record in progress")
+        configureRecordingButton(isRecording: true, isPaused: false, message: "Record in progress")
         
         if !resumeRecording { // Initial recording
             recordPrep()
@@ -74,7 +81,7 @@ class RecordSoundsVC: UIViewController, AVAudioRecorderDelegate {
     
     @IBAction func stopRecording(_ sender: Any) {
         
-        configureRecordingButton(isRecording: false, isPausing: false, message: "Tap to Record")
+        configureRecordingButton(isRecording: false, isPaused: false, message: "Tap to Record")
  
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
@@ -83,7 +90,7 @@ class RecordSoundsVC: UIViewController, AVAudioRecorderDelegate {
     
     @IBAction func pauseRecording(_ sender: Any) {
 
-        configureRecordingButton(isRecording: false, isPausing: true, message: "Tap to Resume")
+        configureRecordingButton(isRecording: false, isPaused: true, message: "Tap to Resume")
         
         resumeRecording = true
         audioRecorder.pause()
