@@ -60,40 +60,16 @@
                                 <color key="textColor" red="0.12895044680000001" green="0.29042533040000001" blue="0.43652474879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlQ-04-PTh">
-                                <rect key="frame" x="113" y="444" width="150" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Transcribe">
-                                    <color key="titleColor" red="0.12895044680000001" green="0.29042533040000001" blue="0.43652474879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.12926477193832397" green="0.28712981939315796" blue="0.4365500807762146" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="e7s-8v-K1M" kind="show" identifier="transcribing" id="y83-p8-wWO"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.59642940759999996" green="0.57893794779999996" blue="0.99072366950000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="UlQ-04-PTh" firstAttribute="trailing" secondItem="2LS-d8-gbN" secondAttribute="trailing" id="A88-P2-KGU"/>
                             <constraint firstItem="2LS-d8-gbN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-51" id="CXa-rn-Geb"/>
                             <constraint firstItem="KkD-Nl-5kw" firstAttribute="centerX" secondItem="2LS-d8-gbN" secondAttribute="centerX" id="F1w-f6-bmg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6tD-oS-6FA" secondAttribute="bottom" constant="35" id="Gf9-e3-aNi"/>
                             <constraint firstItem="2LS-d8-gbN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q5b-aB-dCb"/>
                             <constraint firstItem="6tD-oS-6FA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="abp-HR-Vp1"/>
                             <constraint firstItem="KkD-Nl-5kw" firstAttribute="top" secondItem="2LS-d8-gbN" secondAttribute="bottom" id="f5V-K6-huF"/>
-                            <constraint firstItem="UlQ-04-PTh" firstAttribute="top" secondItem="KkD-Nl-5kw" secondAttribute="bottom" constant="62" id="kUj-Eb-9lH"/>
                             <constraint firstAttribute="trailing" secondItem="6tD-oS-6FA" secondAttribute="trailing" constant="15" id="lpF-la-irR"/>
-                            <constraint firstItem="UlQ-04-PTh" firstAttribute="leading" secondItem="2LS-d8-gbN" secondAttribute="leading" id="s95-Mj-vEr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Record" id="97r-N6-B73">
@@ -104,7 +80,6 @@
                         <outlet property="recordButton" destination="2LS-d8-gbN" id="kFX-fX-MV2"/>
                         <outlet property="recordingLabel" destination="KkD-Nl-5kw" id="XZ9-3T-rul"/>
                         <outlet property="stopRecordingButton" destination="Niz-t6-Jqo" id="NSa-9S-iB1"/>
-                        <outlet property="transcribeButton" destination="UlQ-04-PTh" id="mZJ-VW-I95"/>
                         <segue destination="q5C-d4-Nz1" kind="show" identifier="stopRecording" id="SA1-ls-rr3"/>
                     </connections>
                 </viewController>
@@ -124,13 +99,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.75" contentMode="scaleToFill" text="Lorem ipsum dolor" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Bsw-Om-gQd">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.75" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bsw-Om-gQd">
                                 <rect key="frame" x="16" y="82" width="343" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Fmz-Lr-cao"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -141,10 +116,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Bsw-Om-gQd" secondAttribute="trailing" id="UFJ-0D-Ggd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="Bsw-Om-gQd" id="WYy-i1-scX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kbU-0T-rql" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1556" y="438.53073463268368"/>
+            <point key="canvasLocation" x="2254" y="125"/>
         </scene>
         <!--Play Sound-->
         <scene sceneID="206-u8-TCi">
@@ -250,6 +228,13 @@
                             <constraint firstItem="xw7-hK-8nK" firstAttribute="top" secondItem="to7-4h-WJ9" secondAttribute="bottom" constant="20" id="fNP-YX-wg0"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Play Sound" id="EsJ-Sd-dXr">
+                        <barButtonItem key="rightBarButtonItem" title="Transcribe" id="d5n-yW-pFb">
+                            <connections>
+                                <segue destination="e7s-8v-K1M" kind="show" identifier="transcribing" id="0Tu-6I-bkG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="chipmunkButton" destination="RXx-qV-uZe" id="Lv5-gN-JHj"/>
                         <outlet property="echoButton" destination="XA3-yO-YhB" id="uJu-vz-0gE"/>
@@ -262,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7XJ-Pp-eZA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1556" y="-248"/>
+            <point key="canvasLocation" x="1481" y="125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bxd-aE-iO4">

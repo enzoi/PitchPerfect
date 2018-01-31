@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Speech
 
 class PlaySoundsVC: UIViewController {
 
@@ -29,7 +30,7 @@ class PlaySoundsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         [snailButton, chipmunkButton, rabbitButton, vaderButton, echoButton, reverbButton].forEach {
             $0?.contentMode = .center
             $0?.imageView?.contentMode = .scaleAspectFit
@@ -41,6 +42,27 @@ class PlaySoundsVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureUI(.notPlaying)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "transcribing" {
+            
+            let authStatus = SFSpeechRecognizer.authorizationStatus()
+            
+            switch authStatus {
+            case .authorized:
+                let transcribeVC = segue.destination as! TranscribeVC
+                transcribeVC.recordedAudioURL = self.recordedAudioURL
+            case .denied:
+                print("Speech recognition authorization denied")
+            case .restricted:
+                print("Not available on this device")
+            case .notDetermined:
+                print("Not determined")
+            }
+
+        }
     }
     
     @IBAction func playSoundForButton(sender: UIButton) {

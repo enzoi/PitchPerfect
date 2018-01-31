@@ -62,8 +62,8 @@
 			children = (
 				CF7ED5BD1E92C3A900E609A0 /* AppDelegate.swift */,
 				CF7ED5BF1E92C3A900E609A0 /* RecordSoundsVC.swift */,
-				CFE04B8720205F9700721FB4 /* TranscribeVC.swift */,
 				CFF1FBCA1E95866500005B19 /* PlaySoundsVC.swift */,
+				CFE04B8720205F9700721FB4 /* TranscribeVC.swift */,
 				CFF1FBCC1E959ED500005B19 /* playsoundsviewcontroller-audio.swift */,
 				CF7ED5C11E92C3A900E609A0 /* Main.storyboard */,
 				CF7ED5C61E92C3A900E609A0 /* LaunchScreen.storyboard */,
